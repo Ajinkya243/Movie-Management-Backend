@@ -13,6 +13,10 @@ connectDB().then(()=>console.log("Database connectes.")).then(()=>{
     })
 })
 
+
+app.get("/",async(req,resp)=>{
+    resp.send('Welcome to Movie management api')
+})
 app.get("/movies",async(req,resp)=>{
     try{
         const movie=await Movie.find();
